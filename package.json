@@ -1,0 +1,14 @@
+{
+  "name": "linter-lintr",
+  "main": "./lib/init",
+  "version": "0.0.0",
+  "linter-package": true,
+  "activationEvents": [],
+  "description": "Lint R on the fly, using lintr",
+  "repository": "https://github.com/AtomLinter/linter-lintr",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {}
+}
