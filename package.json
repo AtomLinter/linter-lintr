@@ -1,7 +1,7 @@
 {
   "name": "linter-lintr",
   "main": "./lib/init",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "linter-package": true,
   "activationEvents": [],
   "description": "Lint R on the fly, using lintr",
