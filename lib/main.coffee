@@ -24,11 +24,11 @@ module.exports =
       lint: (textEditor) ->
         filePath = textEditor.getPath()
         fileText = textEditor.getText()
-        return helpers.tempFile path.basename(filePath), fileText, (tmpFilename) =>
+        return helpers.tempFile path.basename(filePath), fileText, (tmpFilename) ->
           parameters = ['--slave', '--restore', '--no-save', '-e']
 
           linters = atom.config.get('linter-lintr.linters')
-          parameters.push('library(lintr);lint(commandArgs(TRUE), #{linters})',
+          parameters.push("library(lintr);lint(commandArgs(TRUE), #{linters})",
               '--args', tmpFilename)
 
           execPath = atom.config.get('linter-lintr.executablePath')
