@@ -32,9 +32,9 @@ module.exports =
               '--args', tmpFilename)
 
           execPath = atom.config.get('linter-lintr.executablePath')
-          return helpers.exec(execPath, parameters).then (result) ->
+          return helpers.exec(execPath, parameters, {stream: 'stdout'}).then (result) ->
             toReturn = []
-            regex = /^.+?:(\d+):(\d+): ((?:error)|(?:warning|style)): (.+)/g
+            regex = /.+?:(\d+):(\d+): ((?:error)|(?:warning|style)): (.+)/g
 
             while (match = regex.exec(result)) isnt null
               line = parseInt(match[1]) or 0
@@ -43,6 +43,6 @@ module.exports =
                 type: if match[3] is 'error' then 'Error' else 'Warning'
                 text: match[4]
                 filePath
-                range: helpers.rangeFromLineNumber(textEditor, line - 1, col - 1)
+                range: [[line - 1, col - 1], [line - 1, col]]
               })
             return toReturn
