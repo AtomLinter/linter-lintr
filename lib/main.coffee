@@ -7,7 +7,7 @@ module.exports =
     linters:
       type: 'string'
       default: 'default_linters'
-      description: 'Full path to binary (e.g. /usr/local/bin/R)'
+      description: 'which linters to use on the code'
 
   activate: ->
     require('atom-package-deps').install('linter-lintr')
