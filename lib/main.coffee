@@ -10,7 +10,7 @@ module.exports =
       description: 'which linters to use on the code'
 
   activate: ->
-    require('atom-package-deps').install('linter-lintr')
+    require('atom-package-deps').install()
 
   provideLinter: ->
     helpers = require('atom-linter')
