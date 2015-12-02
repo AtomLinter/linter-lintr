@@ -16,7 +16,8 @@
     "coffeelint": "^1.14.1"
   },
   "package-deps": [
-    "linter"
+    "linter",
+    "language-r"
   ],
   "scripts": {
     "lint": "./node_modules/.bin/coffeelint lib"
