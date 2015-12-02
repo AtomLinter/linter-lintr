@@ -43,5 +43,6 @@ module.exports =
                 type: if match[3] is 'error' then 'Error' else 'Warning'
                 text: match[4]
                 filePath
+                range: helpers.rangeFromLineNumber(textEditor, line - 1, col - 1)
               })
             return toReturn
