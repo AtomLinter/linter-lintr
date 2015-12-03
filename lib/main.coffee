@@ -28,7 +28,7 @@ module.exports =
           parameters = ['--slave', '--no-restore', '--no-save', '-e']
 
           linters = atom.config.get('linter-lintr.linters')
-          parameters.push("linter::lint(commandArgs(TRUE), #{linters})",
+          parameters.push("suppressPackageStartupMessages(library(lintr));lint(commandArgs(TRUE), #{linters})",
               '--args', tmpFilename)
 
           execPath = atom.config.get('linter-lintr.executablePath')
