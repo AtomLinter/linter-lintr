@@ -23,7 +23,7 @@ module.exports =
       lintOnFly: true
       lint: (textEditor) ->
         filePath = textEditor.getPath()
-        fileText = textEditor.getText()
+        fileText = textEditor.getText() + '\n'
         return helpers.tempFile path.basename(filePath), fileText, (tmpFilename) ->
           parameters = ['--slave', '--restore', '--no-save', '-e']
 
