@@ -13,7 +13,10 @@
     "atom-package-deps": "^3.0.5"
   },
   "devDependencies": {
-    "coffeelint": "^1.14.1"
+    "babel-eslint": "^5.0.0-beta4",
+    "coffeelint": "^1.14.1",
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^1.0.2"
   },
   "package-deps": [
     "linter",
@@ -27,6 +30,21 @@
       "versions": {
         "1.0.0": "provideLinter"
       }
+    }
+  },
+  "eslintConfig": {
+    "extends": "airbnb/base",
+    "parser": "babel-eslint",
+    "globals": {
+      "atom": true
+    },
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "rules": {
+      "comma-dangle": 0,
+      "semi": 0
     }
   }
 }
