@@ -24,6 +24,7 @@ module.exports =
       lint: (textEditor) ->
         filePath = textEditor.getPath()
         fileText = textEditor.getText() + '\n'
+        fileText += '\n' if fileText.slice(-1) isnt '\n'
         return helpers.tempFile path.basename(filePath), fileText, (tmpFilename) ->
           parameters = ['--slave', '--no-restore', '--no-save', '-e']
 
