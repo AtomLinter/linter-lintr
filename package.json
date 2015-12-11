@@ -9,7 +9,7 @@
     "url": "https://github.com/AtomLinter/linter-lintr"
   },
   "dependencies": {
-    "atom-linter": "^3.4.0",
+    "atom-linter": "^4.1.1",
     "atom-package-deps": "^3.0.5"
   },
   "devDependencies": {
