@@ -13,7 +13,7 @@
     "atom-package-deps": "^4.0.1"
   },
   "devDependencies": {
-    "babel-eslint": "^5.0.0-beta4",
+    "babel-eslint": "^5.0.0",
     "coffeelint": "^1.14.1",
     "eslint": "^2.2.0",
     "eslint-config-airbnb": "^5.0.0"
