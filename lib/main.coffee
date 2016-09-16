@@ -26,7 +26,7 @@ module.exports =
         fileText = textEditor.getText() + '\n'
         fileText += '\n' if fileText.slice(-1) isnt '\n'
         return helpers.tempFile path.basename(filePath), fileText, (tmpFilename) ->
-          parameters = ['--slave', '--no-restore', '--no-save', '-e']
+          parameters = ['--vanilla','--slave', '--no-restore', '--no-save', '-e']
 
           linters = atom.config.get('linter-lintr.linters')
           parameters.push("suppressPackageStartupMessages(library(lintr));lint(commandArgs(TRUE), #{linters})",
