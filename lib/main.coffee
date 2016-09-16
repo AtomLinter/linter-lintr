@@ -38,13 +38,13 @@ module.exports =
             regex = /.+?:(\d+):(\d+): ((?:error)|(?:warning|style)): (.+)/g
 
             while (match = regex.exec(result)) isnt null
-              line = parseInt(match[1]) or 0
-              col = parseInt(match[2]) or 0
+              line = Number.parseInt(match[1]) - 1 or 0
+              col = Number.parseInt(match[2]) - 1 or 0
               toReturn.push({
                 type: if match[3] is 'error' then 'Error' else 'Warning'
                 severity: if match[3] is 'error' then 'error' else 'warning'
                 text: match[4]
                 filePath
-                range: [[line - 1, col - 1], [line - 1, col]]
+                range: helpers.rangeFromLineNumber(textEditor, line, col)
               })
             return toReturn
