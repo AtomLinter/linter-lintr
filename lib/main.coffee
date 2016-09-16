@@ -42,6 +42,7 @@ module.exports =
               col = parseInt(match[2]) or 0
               toReturn.push({
                 type: if match[3] is 'error' then 'Error' else 'Warning'
+                severity: if match[3] is 'error' then 'error' else 'warning'
                 text: match[4]
                 filePath
                 range: [[line - 1, col - 1], [line - 1, col]]

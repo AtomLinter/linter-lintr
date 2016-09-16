@@ -1,15 +1,22 @@
 ### Project specific config ###
-language: generic
+language: r
+cache: packages
+
+install:
+  - Rscript -e 'install.packages("lintr")'
 
 matrix:
   include:
     - os: linux
+      r: release
       env: ATOM_CHANNEL=stable
 
     - os: linux
+      r: release
       env: ATOM_CHANNEL=beta
 
     - os: osx
+      r: release
       env: ATOM_CHANNEL=stable
 
 ### Generic setup follows ###
