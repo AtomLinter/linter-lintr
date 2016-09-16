@@ -43,8 +43,7 @@
       "node": true
     },
     "rules": {
-      "comma-dangle": 0,
-      "semi": 0
+      "global-require": "off"
     }
   }
 }
