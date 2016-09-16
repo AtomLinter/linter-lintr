@@ -19,6 +19,10 @@ matrix:
       r: release
       env: ATOM_CHANNEL=stable
 
+env:
+  global:
+    LINTR_COMMENT_BOT=false
+
 ### Generic setup follows ###
 script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
 
