@@ -32,7 +32,7 @@ describe('The lintr provider for Linter', () => {
         expect(messages[0].html).not.toBeDefined();
         expect(messages[0].text).toBe('Use <-, not =, for assignment.');
         expect(messages[0].filePath).toBe(badPath);
-        expect(messages[0].range).toEqual([[0, 4], [0, 5]]);
+        expect(messages[0].range).toEqual([[0, 4], [0, 14]]);
       })
     );
   });
