@@ -5,7 +5,7 @@ import { join } from 'path';
 const badPath = join(__dirname, 'fixtures', 'bad.R');
 
 describe('The lintr provider for Linter', () => {
-  const lint = require(join('..', 'lib', 'main.coffee')).provideLinter().lint;
+  const lint = require('../lib/main.coffee').provideLinter().lint;
 
   beforeEach(() =>
     waitsForPromise(() =>
