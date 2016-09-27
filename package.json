@@ -1,7 +1,7 @@
 {
   "name": "linter-lintr",
   "main": "./lib/main",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Atom linter plugin for R, using lintr",
   "license": "MIT",
   "repository": {
