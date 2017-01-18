@@ -25,7 +25,7 @@
     "atom-package-deps": "^4.0.1"
   },
   "devDependencies": {
-    "eslint": "^3.6.1",
+    "eslint": "^3.13.0",
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-plugin-import": "^2.2.0"
   },
@@ -46,13 +46,6 @@
   },
   "eslintConfig": {
     "extends": "airbnb-base",
-    "globals": {
-      "atom": true
-    },
-    "env": {
-      "es6": true,
-      "node": true
-    },
     "rules": {
       "global-require": "off",
       "import/no-unresolved": [
@@ -63,6 +56,12 @@
           ]
         }
       ]
+    },
+    "globals": {
+      "atom": true
+    },
+    "env": {
+      "node": true
     }
   }
 }
