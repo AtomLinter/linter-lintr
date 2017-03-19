@@ -15,16 +15,15 @@ matrix:
       r: release
       env: ATOM_CHANNEL=beta
 
-    - os: osx
-      r: release
-      env: ATOM_CHANNEL=stable
-
 env:
   global:
     LINTR_COMMENT_BOT=false
 
 ### Generic setup follows ###
-script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
+script:
+  - curl -s -O https://raw.githubusercontent.com/atom/ci/master/build-package.sh
+  - chmod u+x build-package.sh
+  - ./build-package.sh
 
 notifications:
   email:
@@ -34,6 +33,7 @@ notifications:
 branches:
   only:
     - master
+    - /^greenkeeper/.*$/
 
 git:
   depth: 10
