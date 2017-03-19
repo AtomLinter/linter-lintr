@@ -15,10 +15,6 @@ matrix:
       r: release
       env: ATOM_CHANNEL=beta
 
-    - os: osx
-      r: release
-      env: ATOM_CHANNEL=stable
-
 env:
   global:
     LINTR_COMMENT_BOT=false
