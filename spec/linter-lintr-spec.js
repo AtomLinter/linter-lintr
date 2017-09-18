@@ -5,18 +5,16 @@ import { join } from 'path';
 import { beforeEach, it } from 'jasmine-fix';
 
 const badPath = join(__dirname, 'fixtures', 'bad.R');
-const lint = require('../lib/main.js').provideLinter().lint;
+const { lint } = require('../lib/main.js').provideLinter();
 
 describe('The lintr provider for Linter', () => {
   beforeEach(async () => atom.packages.activatePackage('linter-lintr'));
 
   it('should be in the packages list', () =>
-    expect(atom.packages.isPackageLoaded('linter-lintr')).toBe(true),
-  );
+    expect(atom.packages.isPackageLoaded('linter-lintr')).toBe(true));
 
   it('should be an active package', () =>
-    expect(atom.packages.isPackageActive('linter-lintr')).toBe(true),
-  );
+    expect(atom.packages.isPackageActive('linter-lintr')).toBe(true));
 
   it('reports messages from lintr', async () => {
     const editor = await atom.workspace.open(badPath);
