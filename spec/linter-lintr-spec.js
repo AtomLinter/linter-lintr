@@ -22,11 +22,11 @@ describe('The lintr provider for Linter', () => {
     expect(messages.length).toBeGreaterThan(0);
 
     // test only the first error
-    expect(messages[0].type).toBe('Warning');
     expect(messages[0].severity).toBe('warning');
-    expect(messages[0].html).not.toBeDefined();
-    expect(messages[0].text).toBe('Use <-, not =, for assignment.');
-    expect(messages[0].filePath).toBe(badPath);
-    expect(messages[0].range).toEqual([[0, 4], [0, 14]]);
+    expect(messages[0].url).not.toBeDefined();
+    expect(messages[0].description).not.toBeDefined();
+    expect(messages[0].excerpt).toBe('Use <-, not =, for assignment.');
+    expect(messages[0].location.file).toBe(badPath);
+    expect(messages[0].location.position).toEqual([[0, 4], [0, 14]]);
   });
 });
